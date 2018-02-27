@@ -213,8 +213,6 @@ int main (void)
 	cpu_irq_enable();
 
 	system_init();
-	port_pin_set_output_level(LED_0_PIN,LED_0_ACTIVE); //bootloader mode active
-
 	configure_timeout();
 	configure_nvm();
 	
@@ -222,11 +220,13 @@ int main (void)
 	udc_start(); //it hangs here
 	NVIC_SetPriority(USB_IRQn, 1);		//USB Should have lower priority than rtc
 
+	port_pin_set_output_level(LED_0_PIN,LED_0_ACTIVE); //bootloader mode active
+
 	//check if boot-protection is on
 	//(edbg does not write to boot-section if this is protected
 	//(bootprot can be manually changed to 0x07 in the "fuses" tab of Atmel tudio to reprogram)
 	
-	protect_boot_section();												//uncomment for release
+	//protect_boot_section();												//uncomment for release
 
 	while (1) {
 		get_message();//STK500v2
