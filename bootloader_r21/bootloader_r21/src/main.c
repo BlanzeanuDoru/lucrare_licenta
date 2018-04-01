@@ -93,7 +93,7 @@ void rtc_overflow_callback(void)
 	}
 	if((timeout % 50) == 0)
 	{
-		port_pin_toggle_output_level(LED0_PIN);		// when the board is in bootloader mode the L Led blink
+		//port_pin_toggle_output_level(LED0_PIN);		// when the board is in bootloader mode the L Led blink
 	}
 }
 void configure_timeout()
@@ -204,13 +204,16 @@ int main (void)
 		WDT->CTRL.reg &= ~WDT_CTRL_ENABLE;
 	}
 	
+	
 	if(!(PM->RCAUSE.reg & PM_RCAUSE_EXT) && !(PM->RCAUSE.reg & PM_RCAUSE_WDT) && (NVM_MEMORY[APP_START_ADDR / 2] != 0xFFFF))		//Power on reset or systemResetReq -> run main app
 	{
 		start_application();
 	}
+	
 	//if reset by wdt or reset button, run bootloader
 	irq_initialize_vectors();
 	cpu_irq_enable();
+
 
 	system_init();
 	configure_timeout();
@@ -220,7 +223,7 @@ int main (void)
 	udc_start(); //it hangs here
 	NVIC_SetPriority(USB_IRQn, 1);		//USB Should have lower priority than rtc
 
-	port_pin_set_output_level(LED_0_PIN,LED_0_ACTIVE); //bootloader mode active
+	//port_pin_set_output_level(LED_0_PIN,LED_0_ACTIVE); //bootloader mode active
 
 	//check if boot-protection is on
 	//(edbg does not write to boot-section if this is protected

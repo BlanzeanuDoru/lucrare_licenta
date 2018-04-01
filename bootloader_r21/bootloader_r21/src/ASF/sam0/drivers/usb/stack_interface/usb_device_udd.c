@@ -141,6 +141,10 @@ static inline void udd_wait_clock_ready(void)
 #define DFLL_READY_FLAG (SYSCTRL_PCLKSR_DFLLRDY | \
 		SYSCTRL_PCLKSR_DFLLLCKF | SYSCTRL_PCLKSR_DFLLLCKC)
 
+/*Do not monitor the DFLL status bits in the PCLKSR register during the USB clock
+recovery mode. - datasheet 1135*/
+
+//#define DFLL_READY_FLAG (SYSCTRL_PCLKSR_DFLLRDY)
 		/* In USB recovery mode the status is not checked */
 		if (!(SYSCTRL->DFLLCTRL.reg & SYSCTRL_DFLLCTRL_USBCRM)) {
 			while((SYSCTRL->PCLKSR.reg & DFLL_READY_FLAG) != DFLL_READY_FLAG);

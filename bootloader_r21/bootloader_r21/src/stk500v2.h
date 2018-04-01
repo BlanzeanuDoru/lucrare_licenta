@@ -136,6 +136,7 @@ void get_message()
 	while(building_message)
 	{
 		uint8_t received_char = GET_COMMAND_BYTE();
+		port_pin_toggle_output_level(LED_0_PIN);
 		message[current_byte_in_message] = received_char;
 		current_byte_in_message++;
 		switch(current_state)
