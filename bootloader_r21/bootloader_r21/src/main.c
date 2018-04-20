@@ -205,10 +205,10 @@ int main (void)
 	}
 	
 	
-	if(!(PM->RCAUSE.reg & PM_RCAUSE_EXT) && !(PM->RCAUSE.reg & PM_RCAUSE_WDT) && (NVM_MEMORY[APP_START_ADDR / 2] != 0xFFFF))		//Power on reset or systemResetReq -> run main app
-	{
-		start_application();
-	}
+	//if(!(PM->RCAUSE.reg & PM_RCAUSE_EXT) && !(PM->RCAUSE.reg & PM_RCAUSE_WDT) && (NVM_MEMORY[APP_START_ADDR / 2] != 0xFFFF))		//Power on reset or systemResetReq -> run main app
+	//{
+	//	start_application();
+	//}
 	
 	//if reset by wdt or reset button, run bootloader
 	irq_initialize_vectors();

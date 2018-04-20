@@ -303,9 +303,11 @@ void handle_message()
 		case CMD_CHIP_ERASE_ISP:
 			for (uint32_t current_flash_address = APP_START_ADDR; current_flash_address < NVMCTRL_FLASH_SIZE; current_flash_address += NVMCTRL_ROW_SIZE)
 			{
+				uint32_t i = 0,j=10;
 				enum status_code error_code;
 				do
 				{
+					++i;
 					error_code = nvm_is_ready();
 					NVMCTRL->STATUS.reg |= NVMCTRL_STATUS_MASK;
 

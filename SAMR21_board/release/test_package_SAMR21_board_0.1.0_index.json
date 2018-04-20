@@ -1,0 +1,58 @@
+{
+  "packages":
+  [
+    {
+      "name": "atmel-samr21-xpro,
+      "maintainer": "Blanzeanu Doru",
+      "websiteURL": "https://github.com/blanzeanudoru/lucrare_licenta/wiki",
+      "help":
+      {
+        "online": "http://www.arduino.cc/en/Reference/HomePage"
+      },
+      "platforms":
+      [
+        {
+          "name": "Atmel SAMR21 Xplained-pro",
+          "architecture": "sam",
+          "version": "0.1.0",
+          "category": "Contributed",
+          "url": "https://github.com/blanzeanudoru/lucrare_licenta/SAMR21-board/release/download/SAMR21_board-0.1.0.tar.bz2",
+          "archiveFileName": "SAMR21_board-0.1.0.tar.bz2",
+          "checksum": "SHA-256:",
+          "size": "",
+          "boards": [
+            {
+              "name": "atmel_samr21_xpro"
+            }
+          ],
+          "toolsDependencies":
+          [
+            {
+              "packager": "arduino",
+              "name": "arm-none-eabi-gcc",
+              "version": "4.8.3-2014q1"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.6.1-arduino"
+            },
+            {
+              "packager": "arduino",
+              "name": "openocd",
+              "version": "0.9.0-arduino"
+            },
+            {
+              "packager": "arduino",
+              "name": "CMSIS",
+              "version": "4.0.0-atmel"
+            }
+          ]
+        }
+      ],
+      "tools":
+      [
+      ]
+    }
+  ]
+}
