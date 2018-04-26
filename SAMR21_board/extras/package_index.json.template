@@ -2,7 +2,7 @@
   "packages":
   [
     {
-      "name": "atmel-samr21-xpro,
+      "name": "atmel-samr21-xpro",
       "maintainer": "Blanzeanu Doru",
       "websiteURL": "https://github.com/blanzeanudoru/lucrare_licenta/wiki",
       "help":
@@ -13,10 +13,10 @@
       [
         {
           "name": "Atmel SAMR21 Xplained-pro",
-          "architecture": "sam",
+          "architecture": "samr",
           "version": "%%VERSION%%",
           "category": "Contributed",
-          "url": "https://github.com/blanzeanudoru/lucrare_licenta/SAMR21-board/release/download/%%FILENAME%%",
+          "url": "https://github.com/blanzeanudoru/lucrare_licenta/releases/download/v%%VERSION%%/%%FILENAME%%",
           "archiveFileName": "%%FILENAME%%",
           "checksum": "SHA-256:%%CHECKSUM%%",
           "size": "%%SIZE%%",
@@ -27,7 +27,7 @@
           ],
           "toolsDependencies":
           [
-            {
+			{
               "packager": "arduino",
               "name": "arm-none-eabi-gcc",
               "version": "4.8.3-2014q1"

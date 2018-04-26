@@ -24,8 +24,8 @@ PACKAGE_FOLDER := module
 
 ifeq (postpackaging,$(findstring $(MAKECMDGOALS),postpackaging))
   PACKAGE_FILENAME=$(PACKAGE_NAME)-$(CORE_VERSION).tar.bz2
-  PACKAGE_CHKSUM := $(firstword $(shell sha256sum "$(PACKAGE_FILENAME)"))
-  PACKAGE_SIZE := $(firstword $(shell wc -c "$(PACKAGE_FILENAME)"))
+  PACKAGE_CHKSUM := $(firstword $(shell sha256sum "$(RELEASE)/$(PACKAGE_FILENAME)"))
+  PACKAGE_SIZE := $(firstword $(shell wc -c "$(RELEASE)/$(PACKAGE_FILENAME)"))
 endif
 
 # end of packaging specific
