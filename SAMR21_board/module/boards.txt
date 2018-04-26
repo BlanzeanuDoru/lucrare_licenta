@@ -23,5 +23,3 @@ Atmel_SAMR21_XplainedPro_edbg.build.variant=atmel_samr21_xpro
 Atmel_SAMR21_XplainedPro_edbg.build.variant_system_lib=
 Atmel_SAMR21_XplainedPro_edbg.build.vid=0x2341
 Atmel_SAMR21_XplainedPro_edbg.build.pid=0x804d
-Atmel_SAMR21_XplainedPro_edbg.bootloader.tool=openocd
-Atmel_SAMR21_XplainedPro_edbg.bootloader.file=atmel_samr21_xpro/samd21_sam_ba.bin
