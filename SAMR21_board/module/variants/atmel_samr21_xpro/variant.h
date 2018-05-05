@@ -76,8 +76,6 @@ extern "C"
 // Interrupts
 #define digitalPinToInterrupt(P)   ( g_APinDescription[P].ulExtInt )
 
-//Compatibility with D21
-#define PM_APBCMASK_DAC 0
 
 // LED(s)
 #define PIN_LED_13           (2ul)
@@ -110,7 +108,8 @@ static const uint8_t A1  = PIN_A1 ;
 /*
  * SPI Interfaces
  */
-#define SPI_INTERFACES_COUNT 1
+#define SPI_MIN_CLOCK_DIVIDER (uint8_t)(1 + ((F_CPU - 1) / 12000000))
+#define SPI_INTERFACES_COUNT 2
 
 #define PIN_SPI_MOSI         (16ul)
 #define PIN_SPI_MISO         (17ul)

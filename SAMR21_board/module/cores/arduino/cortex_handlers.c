@@ -64,11 +64,8 @@ void TCC2_Handler     (void) __attribute__ ((weak, alias("Dummy_Handler")));
 void TC3_Handler      (void) __attribute__ ((weak, alias("Dummy_Handler")));
 void TC4_Handler      (void) __attribute__ ((weak, alias("Dummy_Handler")));
 void TC5_Handler      (void) __attribute__ ((weak)); // Used in Tone.cpp
-void TC6_Handler      (void) __attribute__ ((weak, alias("Dummy_Handler")));
-void TC7_Handler      (void) __attribute__ ((weak, alias("Dummy_Handler")));
 void ADC_Handler      (void) __attribute__ ((weak, alias("Dummy_Handler")));
 void AC_Handler       (void) __attribute__ ((weak, alias("Dummy_Handler")));
-void DAC_Handler      (void) __attribute__ ((weak, alias("Dummy_Handler")));
 void PTC_Handler      (void) __attribute__ ((weak, alias("Dummy_Handler")));
 void I2S_Handler      (void) __attribute__ ((weak, alias("Dummy_Handler")));
 
@@ -124,14 +121,14 @@ __attribute__ ((section(".isr_vector"))) const DeviceVectors exception_table =
   (void*) TC3_Handler,            /* 18 Basic Timer Counter 0 */
   (void*) TC4_Handler,            /* 19 Basic Timer Counter 1 */
   (void*) TC5_Handler,            /* 20 Basic Timer Counter 2 */
-  (void*) TC6_Handler,            /* 21 Basic Timer Counter 3 */
-  (void*) TC7_Handler,            /* 22 Basic Timer Counter 4 */
+  (void*) (0UL),                  /* 21 Reserved */
+  (void*) (0UL),                  /* 22 Reserved */
   (void*) ADC_Handler,            /* 23 Analog Digital Converter */
   (void*) AC_Handler,             /* 24 Analog Comparators */
-  (void*) DAC_Handler,            /* 25 Digital Analog Converter */
+  (void*) (0UL),                  /* 25 Reserved */
   (void*) PTC_Handler,            /* 26 Peripheral Touch Controller */
   (void*) I2S_Handler,            /* 27 Inter-IC Sound Interface */
-  (void*) (0UL),                  /* Reserved */
+  (void*) (0UL),                  /* 28 Reserved */
 };
 
 extern int main(void);

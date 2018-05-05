@@ -35,13 +35,6 @@ static void syncADC() {
 }
 
 // Wait for synchronization of registers between the clock domains
-static __inline__ void syncDAC() __attribute__((always_inline, unused));
-static void syncDAC() {
-  //while (DAC->STATUS.bit.SYNCBUSY == 1)
-    ;
-}
-
-// Wait for synchronization of registers between the clock domains
 static __inline__ void syncTC_16(Tc* TCx) __attribute__((always_inline, unused));
 static void syncTC_16(Tc* TCx) {
   while (TCx->COUNT16.STATUS.bit.SYNCBUSY);
@@ -134,14 +127,6 @@ uint32_t analogRead(uint32_t pin)
   }
 
   pinPeripheral(pin, PIO_ANALOG);
-
-  if (pin == A0) { // Disable DAC, if analogWrite(A0,dval) used previously the DAC is enabled
-    syncDAC();
-    //DAC->CTRLA.bit.ENABLE = 0x00; // Disable DAC
-    //DAC->CTRLB.bit.EOEN = 0x00; // The DAC output is turned off.
-    syncDAC();
-  }
-
   syncADC();
   ADC->INPUTCTRL.bit.MUXPOS = g_APinDescription[pin].ulADCChannelNumber; // Selection for the positive ADC input
 
@@ -192,6 +177,7 @@ void analogWrite(uint32_t pin, uint32_t value)
   PinDescription pinDesc = g_APinDescription[pin];
   uint32_t attr = pinDesc.ulPinAttribute;
 
+  /*
   if ((attr & PIN_ATTR_ANALOG) == PIN_ATTR_ANALOG)
   {
     // DAC handling code
@@ -209,6 +195,7 @@ void analogWrite(uint32_t pin, uint32_t value)
     syncDAC();
     return;
   }
+  */
 
   if ((attr & PIN_ATTR_PWM) == PIN_ATTR_PWM)
   {

@@ -37,23 +37,18 @@ typedef enum _EAnalogChannel
   ADC_Channel5=5,
   ADC_Channel6=6,
   ADC_Channel7=7,
-#if defined __SAMD21J18A__
   ADC_Channel8=8,
   ADC_Channel9=9,
-#endif // __SAMD21J18A__
   ADC_Channel10=10,
   ADC_Channel11=11,
-#if defined __SAMD21J18A__
   ADC_Channel12=12,
   ADC_Channel13=13,
   ADC_Channel14=14,
   ADC_Channel15=15,
-#endif // __SAMD21J18A__
   ADC_Channel16=16,
   ADC_Channel17=17,
   ADC_Channel18=18,
   ADC_Channel19=19,
-  DAC_Channel0,
 } EAnalogChannel ;
 
 // Definitions for TC channels
@@ -82,12 +77,6 @@ typedef enum _ETCChannel
   TC4_CH1  = (4<<8)|(1),
   TC5_CH0  = (5<<8)|(0),
   TC5_CH1  = (5<<8)|(1),
-#if defined __SAMD21J18A__
-  TC6_CH0  = (6<<8)|(0),
-  TC6_CH1  = (6<<8)|(1),
-  TC7_CH0  = (7<<8)|(0),
-  TC7_CH1  = (7<<8)|(1),
-#endif // __SAMD21J18A__
 } ETCChannel ;
 
 extern const void* g_apTCInstances[TCC_INST_NUM+TC_INST_NUM] ;
@@ -122,12 +111,6 @@ typedef enum _EPWMChannel
   PWM4_CH1=TC4_CH1,
   PWM5_CH0=TC5_CH0,
   PWM5_CH1=TC5_CH1,
-#if defined __SAMD21J18A__
-  PWM6_CH0=TC6_CH0,
-  PWM6_CH1=TC6_CH1,
-  PWM7_CH0=TC7_CH0,
-  PWM7_CH1=TC7_CH1,
-#endif // __SAMD21J18A__
 } EPWMChannel ;
 
 typedef enum _EPortType
@@ -247,7 +230,6 @@ extern const PinDescription g_APinDescription[] ;
 #define GCM_ADC                   (0x1EU)
 #define GCM_AC_DIG                (0x1FU)
 #define GCM_AC_ANA                (0x20U)
-#define GCM_DAC                   (0x21U)
 #define GCM_PTC                   (0x22U)
 #define GCM_I2S_0                 (0x23U)
 #define GCM_I2S_1                 (0x24U)
