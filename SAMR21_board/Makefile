@@ -71,3 +71,7 @@ postpackaging:
 	cat extras/package_index.json.template | sed s/%%VERSION%%/$(CORE_VERSION)/ | sed s/%%FILENAME%%/$(PACKAGE_FILENAME)/ | sed s/%%CHECKSUM%%/$(PACKAGE_CHKSUM)/ | sed s/%%SIZE%%/$(PACKAGE_SIZE)/ > $(RELEASE)/package_$(PACKAGE_NAME)_$(CORE_VERSION)_index.json
 	cp $(RELEASE)/package_$(PACKAGE_NAME)_$(CORE_VERSION)_index.json $(RELEASE)/test_package_$(PACKAGE_NAME)_$(CORE_VERSION)_index.json
 	@echo "$(RELEASE)/package_$(PACKAGE_NAME)_$(CORE_VERSION)_index.json created"
+
+copy_files:
+	@echo ----------------------------------------------------------
+	cp -r module/* C:/Users/doru/AppData/Local/Arduino15/packages/atmel-samr21-xpro/hardware/samr/0.1.0

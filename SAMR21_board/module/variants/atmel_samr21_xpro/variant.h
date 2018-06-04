@@ -19,6 +19,8 @@
 #ifndef _VARIANT_ATMEL_SAMR21_XPRO_
 #define _VARIANT_ATMEL_SAMR21_XPRO_
 
+#define ARDUINO_SAMD_VARIANT_COMPLIANCE 10606
+
 /*----------------------------------------------------------------------------
  *        Definitions
  *----------------------------------------------------------------------------*/
@@ -51,7 +53,7 @@ extern "C"
  *----------------------------------------------------------------------------*/
 
 // Number of pins defined in PinDescription array
-#define PINS_COUNT           (30u)
+#define PINS_COUNT           (36u)
 #define NUM_DIGITAL_PINS     (8u)
 #define NUM_ANALOG_INPUTS    (1u)
 #define NUM_ANALOG_OUTPUTS   (0u)
@@ -72,10 +74,6 @@ extern "C"
  * https://github.com/arduino/Arduino/issues/1833
  */
 // #define digitalPinToTimer(P)
-
-// Interrupts
-#define digitalPinToInterrupt(P)   ( g_APinDescription[P].ulExtInt )
-
 
 // LED(s)
 #define PIN_LED_13           (2ul)
@@ -109,7 +107,8 @@ static const uint8_t A1  = PIN_A1 ;
  * SPI Interfaces
  */
 #define SPI_MIN_CLOCK_DIVIDER (uint8_t)(1 + ((F_CPU - 1) / 12000000))
-#define SPI_INTERFACES_COUNT 2
+#define SPI_INTERFACES_COUNT 1
+//#define SAMR_SERIES 1
 
 #define PIN_SPI_MOSI         (16ul)
 #define PIN_SPI_MISO         (17ul)
@@ -137,18 +136,25 @@ static const uint8_t SCK  = PIN_SPI_SCK ;
 /*
  * USB
  */
-#define PIN_USB_DP           (28ul)
-#define PIN_USB_DM           (29ul)
-#define PIN_USB_HOST_ENABLE  (30ul)
+#define PIN_USB_DP           (33ul)
+#define PIN_USB_DM           (34ul)
+#define PIN_USB_HOST_ENABLE  (35ul)
 #define PIN_USB_VBUS         PIN_USB_HOST_ENABLE
 
 /*
  * 802.15.4/ATRF233
  */
-#define PIN_ATRF233_MOSI    (21ul)
-#define PIN_ATRF233_MISO    (22ul)
-#define PIN_ATRF233_SCK     (23ul)
-#define PIN_ATRF233_SS      (24ul)
+#define PIN_ATRF233_MOSI    (23ul)
+#define PIN_ATRF233_MISO    (24ul)
+#define PIN_ATRF233_SCK     (25ul)
+#define PIN_ATRF233_SS      (26ul)
+#define PIN_ATRF233_CLKM    (27ul)
+#define PIN_ATRF233_IRQ     (28ul)
+#define AT86RFX_IRQ_CHAN    ( 0ul)
+#define PIN_ATRF233_RST     (29ul)
+#define PIN_ATRF233_SLP     (30ul)
+#define PIN_ATRF233_RFCTRL1 (31ul)
+#define PIN_ATRF233_RFCTRL2 (32ul)
 #define PERIPH_ATRF233      sercom4
 #define PAD_ATRF233_TX      SPI_PAD_2_SCK_3
 #define PAD_ATRF233_RX      SERCOM_RX_PAD_0

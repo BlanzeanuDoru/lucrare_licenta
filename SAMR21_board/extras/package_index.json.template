@@ -46,6 +46,11 @@
               "packager": "atmel-samr21-xpro",
               "name": "CMSIS",
               "version": "4.0.0-atmel"
+            },
+			{
+              "packager": "atmel-samr21-xpro",
+              "name": "CMSIS-Atmel",
+              "version": "1.2.0"
             }
           ]
         }
