@@ -5,6 +5,7 @@ int received = 0;
 // the setup function runs once when you press reset or power the board
 void setup() {
   Serial.begin(9600);
+  Serial.println("Receive");
   at86rf2xx.init();
   at86rf2xx.set_chan(26); 
 }

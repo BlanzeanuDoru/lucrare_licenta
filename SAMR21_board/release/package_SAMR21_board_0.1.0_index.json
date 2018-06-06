@@ -18,8 +18,8 @@
           "category": "Contributed",
           "url": "https://github.com/blanzeanudoru/lucrare_licenta/releases/download/v0.1.0/SAMR21_board-0.1.0.tar.bz2",
           "archiveFileName": "SAMR21_board-0.1.0.tar.bz2",
-          "checksum": "SHA-256:fe6213b948d4f021023d5328dcdd7c1372135b79cc2bde00e24e09974cd4f438",
-          "size": "807919",
+          "checksum": "SHA-256:5e7112295fb8fc905cee541536bab6e28faf8e37754c4cf44ee048269071ee1e",
+          "size": "826365",
           "boards": [
             {
               "name": "atmel_samr21_xpro"
@@ -46,6 +46,11 @@
               "packager": "atmel-samr21-xpro",
               "name": "CMSIS",
               "version": "4.0.0-atmel"
+            },
+			{
+              "packager": "atmel-samr21-xpro",
+              "name": "CMSIS-Atmel",
+              "version": "1.2.0"
             }
           ]
         }
