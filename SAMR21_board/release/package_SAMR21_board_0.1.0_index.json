@@ -18,8 +18,8 @@
           "category": "Contributed",
           "url": "https://github.com/blanzeanudoru/lucrare_licenta/releases/download/v0.1.0/SAMR21_board-0.1.0.tar.bz2",
           "archiveFileName": "SAMR21_board-0.1.0.tar.bz2",
-          "checksum": "SHA-256:5e7112295fb8fc905cee541536bab6e28faf8e37754c4cf44ee048269071ee1e",
-          "size": "826365",
+          "checksum": "SHA-256:e01e5344782f23d5800042ef0d7b6cceeb424b36167c3c4592e40ff71b13ba42",
+          "size": "826188",
           "boards": [
             {
               "name": "atmel_samr21_xpro"
@@ -45,7 +45,7 @@
             {
               "packager": "atmel-samr21-xpro",
               "name": "CMSIS",
-              "version": "4.0.0-atmel"
+              "version": "4.5.0"
             },
 			{
               "packager": "atmel-samr21-xpro",
@@ -218,6 +218,55 @@
               "archiveFileName": "openocd-0.9.0-arduino6-static-i686-linux-gnu.tar.bz2",
               "checksum": "SHA-256:88d948c2062c73c0c93e649e099aaac4b009018cff365f44cfc5b47907043dc9",
               "size": "1340444"
+            }
+          ]
+        },
+		{
+          "name": "CMSIS",
+          "version": "4.5.0",
+          "systems":
+          [
+            {
+              "host": "i686-mingw32",
+              "url": "http://downloads.arduino.cc/CMSIS-4.5.0.tar.bz2",
+              "archiveFileName": "CMSIS-4.5.0.tar.bz2",
+              "checksum": "SHA-256:cd8f7eae9fc7c8b4a1b5e40b89b9666d33953b47d3d2eb81844f5af729fa224d",
+              "size": "31525196"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "http://downloads.arduino.cc/CMSIS-4.5.0.tar.bz2",
+              "archiveFileName": "CMSIS-4.5.0.tar.bz2",
+              "checksum": "SHA-256:cd8f7eae9fc7c8b4a1b5e40b89b9666d33953b47d3d2eb81844f5af729fa224d",
+              "size": "31525196"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "http://downloads.arduino.cc/CMSIS-4.5.0.tar.bz2",
+              "archiveFileName": "CMSIS-4.5.0.tar.bz2",
+              "checksum": "SHA-256:cd8f7eae9fc7c8b4a1b5e40b89b9666d33953b47d3d2eb81844f5af729fa224d",
+              "size": "31525196"
+            },
+            {
+              "host": "i686-pc-linux-gnu",
+              "url": "http://downloads.arduino.cc/CMSIS-4.5.0.tar.bz2",
+              "archiveFileName": "CMSIS-4.5.0.tar.bz2",
+              "checksum": "SHA-256:cd8f7eae9fc7c8b4a1b5e40b89b9666d33953b47d3d2eb81844f5af729fa224d",
+              "size": "31525196"
+            },
+            {
+              "host": "arm-linux-gnueabihf",
+              "url": "http://downloads.arduino.cc/CMSIS-4.5.0.tar.bz2",
+              "archiveFileName": "CMSIS-4.5.0.tar.bz2",
+              "checksum": "SHA-256:cd8f7eae9fc7c8b4a1b5e40b89b9666d33953b47d3d2eb81844f5af729fa224d",
+              "size": "31525196"
+            },
+            {
+              "host": "all",
+              "url": "http://downloads.arduino.cc/CMSIS-4.5.0.tar.bz2",
+              "archiveFileName": "CMSIS-4.5.0.tar.bz2",
+              "checksum": "SHA-256:cd8f7eae9fc7c8b4a1b5e40b89b9666d33953b47d3d2eb81844f5af729fa224d",
+              "size": "31525196"
             }
           ]
         },
