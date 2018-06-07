@@ -18,8 +18,8 @@
           "category": "Contributed",
           "url": "https://github.com/blanzeanudoru/lucrare_licenta/releases/download/v0.1.0/SAMR21_board-0.1.0.tar.bz2",
           "archiveFileName": "SAMR21_board-0.1.0.tar.bz2",
-          "checksum": "SHA-256:e01e5344782f23d5800042ef0d7b6cceeb424b36167c3c4592e40ff71b13ba42",
-          "size": "826188",
+          "checksum": "SHA-256:dd3437d2e5397437f654e79ece75ac8ce6d91a0dd5a260e7ba9f9c46598709fa",
+          "size": "826149",
           "boards": [
             {
               "name": "atmel_samr21_xpro"
