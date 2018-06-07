@@ -1,0 +1,168 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[utf8]{inputenc} % pentru suport diacritice
+\usepackage[romanian]{babel} % setări pentru limba română 
+\renewcommand\familydefault{\sfdefault} % sans serif
+
+\usepackage[margin=2.54cm]{geometry}	% dimensiuni pagină și margini
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% formatting sections and subsections
+\usepackage{textcase}
+\usepackage[titletoc, title]{appendix}
+\usepackage{titlesec}
+\titleformat{\chapter}{\large\bfseries}{\thechapter}{2ex}{}[\vspace*{-1.5cm}]
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter} % no chapter number in figure labels
+\counterwithout{table}{chapter} % no chapter number in table labels
+\counterwithout{equation}{chapter} % no chapter number in equation labels
+
+\usepackage{booktabs} % for much better looking tables
+\usepackage{url} % Useful for inserting web links nicely
+\usepackage[bookmarks,unicode,hidelinks]{hyperref}
+
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{enumitem}
+\setlist{noitemsep}
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+
+
+\newcommand{\HeaderLineSpace}{-0.5cm}
+\newcommand{\UniTextRO}{Universitatea POLITEHNICA București \\[\HeaderLineSpace] 
+Facultatea Automatică și Calculatoare \\[\HeaderLineSpace]
+Departamentul Automatică și Informatică Industrială\\}
+\newcommand{\DiplomaRO}{LUCRARE DE LICENȚĂ}
+\newcommand{\AdvisorRO}{Coordonator științific:}
+\newcommand{\BucRO}{BUCUREȘTI}
+
+\newcommand{\frontPage}[5]{
+\begin{titlepage}
+\begin{center}
+{\Large #1}  % header (university, faculty, department)
+\vspace{50pt}
+\begin{tabular}{p{6cm}p{3cm}}
+\includegraphics[scale=0.8]{pics/upb-logo.jpg} &
+	\includegraphics[scale=0.27,clip=true]{pics/acs_logo.jpg}
+\end{tabular}
+
+\vspace{105pt}
+{\Huge #2}\\                           % diploma project text
+\vspace{40pt}
+{\Large #3}\\ \vspace{0pt}  % project title
+\vspace{40pt}
+{\LARGE \Name}\\                   % student name
+\end{center}
+\vspace{60pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{6cm}r}
+&{\large\textbf{#4}}\vspace{10pt}\\      % scientific advisor
+&{\large \Advisor}                                    % advisor name
+\end{tabular*}
+\vspace{20pt}
+\begin{center}
+{\large\textbf{#5}}\\                                % bucharest
+\vspace{0pt}
+{\normalsize \Year}
+\end{center}
+\end{titlepage}
+}
+
+\newcommand{\frontPageRO}{\frontPage{\UniTextRO}{\DiplomaRO}{\ProjectTitleRO}{\AdvisorRO}{\BucRO}}
+
+\linespread{1.5}
+\setlength\parindent{0pt}
+\setlength\parskip{.28cm}
+
+%% Abstract macro
+\newcommand{\AbstractPage}{
+\begin{titlepage}
+\textbf{\large TODO:  SINOPSIS}\par
+\AbstractRO\par\vfill
+\end{titlepage}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%
+%%          End of template definitions
+%%   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ProjectTitleRO}{Integrarea unei plăci de dezvoltare bazate pe microcontrolerul ATSAMR21 cu mediul de dezvoltare Arduino IDE}
+\newcommand{\Name}{Blânzeanu Doru-Florin}
+\newcommand{\Advisor}{SI. dr. ing. Radu Pietraru}
+\newcommand{\Year}{2018}
+
+
+
+
+% Setări document
+\title{Proiect de diplomă}
+\author{\Name}
+\date{\Year}
+
+\newcommand{\Thanks}{(opțional) Aici puteți introduce o secțiunea specială de mulțumiri / acknowledgments. }
+
+\newcommand{\AbstractRO}{Sinopsisul proiectului are rol de introducere, conținând atât o descriere pe scurt a problemei abordate cât și o enumerare sumară a rezultatelor și a concluziilor. Se recomandă ca sinopsisul să fie redactat într-un limbaj accesibil unei persoane nefamiliarizate cu domeniul, dar în același timp destul de specific pentru a oferi rapid o vedere de ansamblu asupra proiectului prezentat.
+Sinopsisul proiectului va fi redactat atât în română cât și în engleză. Ca dimensiunea recomandată aceasta secțiune va avea maxim 200 de cuvinte pentru fiecare variantă. Împreună, ambele variante se vor încadra într-o singură pagină.}
+
+\begin{document}
+
+\frontPageRO
+\cleardoublepage
+\setcounter{page}{1}
+
+\begingroup
+\linespread{1}
+\tableofcontents
+\endgroup
+
+\AbstractPage
+
+\chapter{Introducere}\pagestyle{fancy}
+Arduino este o platformă open-source cu o comunitate la nivel global, dedicată utilizatorilor care doresc să creeze aplicații electronice interactive. Arduino este foarte utilizat in diverse domenii cum ar fi:
+\begin{itemize}
+	\item robotică
+	\item internetul lucrurilor
+	\item învățământ
+	\item prototipare
+	\item cercetare și dezvoltare
+\end{itemize}
+Datorită faptului Arduino este o platformă open-source, oricine este bine-venit să contribuie la dezvoltarea de noi funcționalități și integrarea de noi plăci de dezvoltare. Acest lucru are și avantajul că exisă mulți utilizatori care lucrează pe același cod sursă, astfel totodată involuntar testând și raportând orice tip de problemă.
+
+În ultimii ani, Arduino a atras din ce în ce mai mulți utilizatori dornici să implementeze aplicații practice rapid deoarece arhitectura platformei are grijă să inițializeze și să configureze multe dintre elementele utilizate, astfel este mult mai simplu pentru utilizatorii mai puțin experimentați să înceapă un proiect nou, iar utilizatorii cu experiență pot opta să configureze manual doar elementele sau modulele de care ei au nevoie.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Prezentarea domeniului din care face parte lucrarea}
+\chapter{Descrierea problemei abordate și a metodei de rezolvare propuse}
+\chapter{Documentație tehnică}
+\chapter{Concluzii și dezvoltări ulterioare}
+\chapter{Bibliografie}
+
+\end{document}
