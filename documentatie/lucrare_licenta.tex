@@ -157,7 +157,6 @@ Sinopsisul proiectului va fi redactat atât în română cât și în engleză. 
 Pentru dezvoltarea de sisteme integrate exista opțiunea de a alege componenta de bază pentru procesare fie un microcontroler, fie un microprocesor. Ambele abordări au avantajele și dezavantajele lor, dar în general în aplicațiile în care contează dimensiunea, costul și puterea consumată, este preferat un microcontroler. Când vine vorba despre o aplicație care necesită comunicație radio, alegerea unui microcontroler care are integrată o componentă radio este mult mai convenabilă spre deosebire de un microcontroler care nu dispune de această componentă la care să se adauge componenta radio externă. Unul dintre motivele pentru care este mai convenabilă prima variantă este constrângerea asupra dimensiunii, care în cazul primei opțiuni, este mult mai mică.
 Un alt motiv pentru care reprezintă un avantaj alegerea unui microcontroler cu modul radio integrat, este faptul că producătorii acestor microcontrolere au ca scop maximizarea performanței prin minimizarea consumului, astfel aceste microcontrolere sunt specializate în comunicația radio spre deosebire de celelalte care sunt de uz general.
 
-
 Arduino este o platformă open-source bazată pe componente hardware și unelte software ușor de utilizat. Ecosistemul Arduino oferă suport și pentru o gamă largă de alte microcontrolere, toate aceste unelte alăturate într-un singur pachet ușor de utilizat pentru dezvoltatorii începători, însă destul de flexibil pentru dezvoltatorii avansați.
 Arduino este foarte utilizat in diverse domenii cum ar fi:
 \begin{itemize}
@@ -172,9 +171,8 @@ Datorită faptului că Arduino este o platformă open-source, oricine este binev
 
 În ultimii ani, Arduino a atras din ce în ce mai mulți utilizatori dornici să implementeze aplicații practice rapid deoarece arhitectura platformei are grijă să inițializeze și să configureze multe dintre elementele utilizate, astfel este mult mai simplu pentru utilizatorii mai puțin experimentați să înceapă un proiect nou, iar utilizatorii cu experiență pot opta să configureze manual doar elementele sau modulele de care ei au nevoie. 
 
-
 \chapter{Prezentarea domeniului din care face parte lucrarea}
-Internetul Lucrurilor se referă la un tip de rețea care conectează totul la internet printr-o suită de protocoale în scopul schimbării de  informație și a comunicării pentru a putea implementa recunoaștere, poziționare, urmărire și administrare inteligentă\cite{theiot}. \\
+Internetul Lucrurilor se referă la un tip de rețea care conectează totul la internet printr-o suită de protocoale în scopul schimbării de informație și a comunicării pentru a putea implementa recunoaștere, poziționare, urmărire și administrare inteligentă\cite{theiot}. \\
 Internetul lucrurilor promite să revoluționeze felul în care noi trăim și muncim. Ne-ar putea ajuta să trecem peste problemele globale datorate populației: criza energiei, lipsa resurselor și poluare. Pentru a realiza această viziune, avem nevoie de senzori care preiau informația din mediu și o împărtășesc între ei sau cu alte dispozitive care permit accesul utilizatorului uman pentru a lua decizii inteligente care afecteaza întregul nostru ecosistem.
 Datorită acestui fapt, interesul către internetul lucrurilor este din ce în ce mai mare. Multe studii au prevăzut o creștere accelerată a numărului de vânzări de dispozitive inteligente în următorii 10 ani.
 
@@ -193,6 +191,39 @@ Potrivit unui studiu efectuat în anul 2018 cu privire la clasificarea domeniilo
 Dorința de a funcționa un timp îndelungat fără să necesite intervenția omului, a fost scopul principal în designul de rețele de senzori wireless în ultimii 10 ani\cite{lowpowervsperformance}. Prin concentrarea asupra acestei cerințe, designerii au căutat acele componente hardware care aveau cel mai mic consum de curent electric în mod activ și în sleep mode\footnote{sleep mode = mod de consum redus}. Aceste dispozitive consumă energie de ordin mW putere în mod activ, iar în modul de consum redus uW, renunțând la putere de calcul și memorie în favoarea consumului redus.
 În schimb, puterea de calcul limitată și resursele de memorie mici ale acestor platforme restricționează aplicațiile pe care le pot implementa. Aplicațiile tipice urmăresc un model care preia date de la senzori, îi stochează, îi trimite și apoi intră din nou în modul de consum redus, în care senzorii de pe placă sunt interogați și datele returnate sunt trimise către un server. Aplicațiile ce necesită putere de calcul mare nu sunt suportate de aceste platforme. \\
 Aplicațiile care necesită putere de calcul mare sau procesare de semnal, în general trebuie să facă un compromis pentru a evita limitările impuse de platformă. Aceste aplicații tind să fie caracterizate de intervale alternante de activitate intensă urmată de perioade de inactivitate. Alternativa este să se utilizeze platforme care sacrifică consumul în favoarea puterii de procesare, sau platforme care combină microcontrolere low-power\footnote{low-power = consum redus} cu procesoare de înaltă performanță care consumă mult.
+
+\section{Protocoale radio}
+Domeniul IoT se bazează în cea mai mare parte pe transmisie și colectare de date. De cele mai multe ori este nevoie de de tehnologii care să ajute șa transmisia datelor la distanță, fără fir.
+Când vine vorba despre tehnologii wireless\footnote{wireless = fără fir}, inginerii au la dispoziție o gamă largă, inclusiv tehnologii bazate pe RF\footnote{RF = Radio Frequency} cum ar fi: Bluetooth Low Energy(BLE), NFC, ANT, RF4CE, Nike+, ZigBee și Wi-Fi, la care se adaugă și opțiunile bazate pe infraroșu de la IrDA\footnote{IrDA = Infrared Data Association}\cite{comp1}. Această gamă largă de opțiuni face ca alegerea să fie mai dificilă. Fiecare tehnologie face compromisuri între consum, lărgime de bandă și distanță de transmisie.
+
+Bluetooth Low Energy(BLE) a pornit ca un mic proiect în compania Nokia sub numele de Wibree. Bluetoot Special Interest Group a adoptat această tehnologie și odată cu versiunea 4.0 a fost numită tehnologie cu consum ultra redus. BLE operează în banda de 2.4GHz și este potrivită pentru transmisia de date de la senzori wireless sau alte periferice care permit în special comunicație asincronă. Introducerea verisunii 5 a tehnologiei Bluetooth a ridicat rata de transfer a chipurilor de la 1 la 2 Mbit/s și a crescut distanța de transmisie de până la patru ori în comparație cu versiunile anterioare. De menționat este că aceste îmbunătățiri nu se pot obține simulta, ci printr-un compromis intre cele două.
+
+În ceea ce privește tehnologia ANT, aceasta este comparabilă cu BLE din punct de vedere al consumului și al domeniului de operare, banda 2.4GHz ISM. Aplicațiile țintă ale acestui protocol sunt acelea cu consum redus, la care durata de viață a bateriei este de luni sau ani de zile. Original piața țintă viza segmentul de fitness și sport, dar în ultimul timp a fost folosit în aplicații IoT pentru case inteligente sau în industrie.
+
+Zigbee este un set de specificații wireless cu consum redus bazat pe IEEE802.15.4. Peste acesta rulează un protocol controlat de Zigbee Alliance, fiind destinat aplicațiilor de rețea industrială sau pentru case inteligente. Acesta operează în banda 2.4GHz ISM dar și în 784MHz în China, 868MHz în Europa și 912MHz în SUA sau Australia. Viteza de transmisie variază de la 20Kb/s la 250kb/s. Zigbee folosețte 16 canale de 2MHz separate de câte 5MHz, astfel spectrul este utilizat ineficient din cauza alocării nefolosite.
+
+Wi-Fi este bazat pe IEEE 802.11 și este o tehnologie foarte eficientă, însă este mai mult optimizată pentru transferuri de date de dimensiuni mari decât pentru consum redus. De aceea Wi-Fi nu este destinat aplicațiilor de consum redus. Îmbunătățiri în direcția optimizării consumului au fost aduse prin standardele IEEE 802.11v și IEEE 802.11ah.
+
+Din punct de vedere al distanței de transmisie ale tehnologiilor wireless, aceasta se crede a fi direct proporțională cu puterea de la ieșirea transmițătorului combinată cu sensibilitatea receptorului măsurate în decibeli. Putere de transmisie mai mare și sensibilitate mai mare măresc distanța de transmisie datorită îmbunătățirii raportului semnal/zgomot(SNR). SNR este o măsură a abilității unui receptor de a extrage corect și a decoda un semnal din zgomotul ambiant. Aceștia însă nu sunt singurii factori care limitează distanța de transmisie, mediul, frecvența semnalului purtător, designul  și codarea mesajelor joacă un rol foarte important. Următoarea listă arată distanțele de transmisie tipice așteptate de la tehnologiile de consum redus printr-un mediu neobstrucționat fără interferențe radio\cite{comp1}:
+\begin{itemize}
+	\item NFC - 10cm
+	\item IrDA - 10cm
+	\item Nike+ - 10m
+	\item ANT(+) - 30m
+	\item 5GHz Wi-fi: 50m
+	\item Zigbii/RF4CE - 100m
+	\item BLE - 100m
+	\item 2.4GHz Wi-fi - 150m
+	\item BLE versiunea 5 cu rază extinsă - de la 200 la 400 m
+\end{itemize}
+Pe lângă viteză de transmisie și distanță, costul joacă un rol important în alegerea unui modul de transmisie și recepție radio. Principalele costuri asociate unui senzor wireless cu consum redus le reprezintă transmițătorul, microprocesorul, antena, regulatorul de tensiune și placa. Se presupune că nu intră în costul total bateria, conectorii bateriei și că senzorii sunt independenți de tehnologiile wireless\cite{comp2}. Cristalele de quartz externe pot contribui semnificativ la costul total al unui senzor wireless deoarece dispozitivele de înaltă calitate necesită îndeplinirea unor cerințe stricte.
+
+Tehnologiile wireless cu consum redus sunt destinate îmbunătățirii duratei de viață a bateriei. O bună măsurare a performanței consumului fiecărei tehnologii se poate face considerând energia necesară transmiterii unui singur bit. Un astfel de calcul justifică faptul că un protocol care are o viteză de transmisie mai mare trebuie să transmită o perioadă mai mică de timp. În următorul paragraf se va face o comparație între o aproximație grosieră a consumului pe tehnologie, acestea putând varia în funcție de producător.
+
+În urma publicării unei aplicații\cite{lowen} care calculează curentul mediu consumat pentru BLE în aplicații tipice s-a constatat un consum de 72 microwatts la o viteză de transfer de 960 b/s. Un calcul similar a fost aplicat asupra tehnologiei ANT care a arătate un consum de 183 microwatts la o viteză de 256b/s în timp ce protocolul Zigbee consumă 90 de miliwatts la o viteză de 250kb/s.
+Wi-Fi are un consum mare de curent chiar și când nu transmite la viteză maximă, puterea consumată ajungând la 0.21 Watts la o viteză de 40Mb/s
+
+Durata de viață a bateriei depinde însă și de aplicație nu numai de alegerea tehnologiei folosite. Dacă un dispozitiv caută în permanență sau transmite va avea un consum ridicat de curent electric și va goli mult mai repede bateria, indiferent de tehnologia wireless utilizată. Majoritatea tehnologiilor wireless cu consum redus sunt proiectate să consume puțin prin rularea la o viteză mai mică, astfel petrecând mult timp în \textit{sleep mode} înainte de a se "trezi" și a transmite date și întorcându-se la starea de sleep.
 
 \section{Aplicații}
 Internetul lucrurilor se poate aplica în activitățile industriale, inclusiv în tranzacțiile dintre companii, organizații sau alte entități, se poate utiliza în logistică, producție, procese, servicii, banking, etc\cite{iotfields}.
@@ -471,7 +502,7 @@ Un exemplu de secvență în care se definesc memoriile disponibile se poate obs
 \includegraphics[scale=0.9]{pics/bss.png}
   \caption{Zona de memorie .bss din scriptul pentru linker}
   \label{fig:bssscript}
-\end{figure}\\
+\end{figure}
 
 \subsubsection{Library}
 Codul sursă pentru funcționalitatea radio se află în această parte a proiectului. Implementarea pentru biblioteca radio care oferă funcționalitatea dorită folosind modului AT86RF233 există în sistemul de operare în timp real destinat aplicațiiolor IoT, RIOT-OS. Translatarea acestui cod la o bibliotecă scrisă în C++ pentru Arduino va fi folosită în realizarea proiectului\cite{msolters}.
@@ -542,11 +573,19 @@ Spre deosebire de modul de acces \textit{Frame buffer}, modul de acces SRAM, est
 În cadrul funcției \textit{tx\_prepare} se verifică starea modulului,  dacă este ocupat se așteaptă eliberarea acestuia, iar dacă primește un cadru se anulează transmisia. Se contunuă cu setarea stării de așteptare transmitere.
 Funcția de \textit{tx\_load} are ca parametri șirul de octeți care vor fi transmiși, lungimea șirului și indicele de unde va începe scrierea. Datorită faptului că valoarea câmpului PHR este de un octet, indicele de unde va începe scrierea va fi egal cu 1. Pentru a scrie în memoria SRAM se apelează funcția de transfer din clasa SPI care va pune în registrul de date octetul care se dorește a fi transmis spre modulul radio. Astfel, datele transmise sunt, comanda care selectează modul de acces, indicele de la care se începe scrierea și un număr de octeți egal cu lungimea șirului transmis.
 Pentru a porni transmisia, în metoda \textit{tx\_exec}, se scrie dimensiunea cadrului IEEE 802.15.4 care va urma a fi transmis, aceasta va fi egală cu dimensiunea șirului de octeți la care se mai adaugă un octet pentru dimensiunea cadrului, și se va scrie în registrul de stare, comanda de pornire a transmisiei. Toată această procedură poate fi observată în Figura~\ref{fig:send}.
-\begin{figure}[h]
+\begin{minipage}[c]{\textwidth}
 \centering
 \includegraphics[scale=0.68]{pics/send.png}
-  \caption{Implementarea transmisieu unui șir de octeți}
+  \captionof{figure}{Implementarea transmisiei unui șir de octeți}
   \label{fig:send}
+\end{minipage}\\
+
+La primirea unui cadru IEEE 802.15.4 se incrementează variabila publică, \textit{events}, din clasa AT86RF2XX. Asfel pentru a ști când s-a primit un nou cadru, trebuie verificată acea variabilă. Când se dorește citirea acelui cadru, întâi se apelează metoda \textit{rx\_len} care va returna lungimea pachetului primit, iar apoi se apelează \textit{rx\_read} care folosind modul de acces SRAM, va returna șirul de octeți primit(Figura~\ref{fig:receive}).\\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.68]{pics/receive.png}
+  \caption{Implementarea recepționării unui șir de octeți}
+  \label{fig:receive}
 \end{figure}\\
 
 \subsection{Adăugare proiect}
@@ -578,9 +617,52 @@ Un exemplu de fișier de configurare se poate vedea în figura ~\ref{fig:json}.
   \label{fig:json}
 \end{figure}
 
+După definirea corectă a fișierului de tip json, acesta este urcat pe platforma github pentru a avea acces la el folosind un url\footnote{URL = Uniform Resource Locator}. Deasemenea, pachetul care con'ine codul sursă pentru toate cele 3 părți componente ale proiectului, este arhivat și urcat tot pe platforma github, iar url-ul care duce la acesta este pus în acest json de configurare.
+
 \section{Rezultate obținute}
+Pentru a putea instala pachetul rezultat, este nevoie de url-ul care indică locația fișierului json. În Arduino IDE în meniul \textit{File} la opțiunea \textit{Preferances} în câmpul \textit{Additional Boards Manager URLs} trebuie adăugat și url-ul obținut. După urmarea acestor pași, în meniul \textit{Tools}, submeniul \textit{Board}, elementul \textit{Boards Manager} va apărea opțiunea de a instala placa de dezvoltare Atmel SAMR21 Xplained Pro(Figura~\ref{fig:boardmanager}).
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.8]{pics/boardsmanager.png}
+  \caption{Meniul de instalare pentru plăci de dezvoltare}
+  \label{fig:boardsmanager}
+\end{figure}
+
+După instalare va fi posibilă selectarea programării noii plăci de dezvoltare și pentru a ușura dezvoltarea aplicațiilor pentru această placă, au fost adăugate două exemple de \textit{sketch} numite SAMR21\_AT86RF2x\_RECEIVE și SAMR21\_AT86RF2x\_SEND. Aceste exemple introduc utilizatorul în lucrul cu biblioteca radio și expun metodele folosite adesea în lucrul cu modulul radio.
+Folosirea acestui pachet oferă acum posibilitatea de a programa placa de dezvoltare Atmel SAMR21 Xplained Pro ca pe orice altă placă de dezvoltare care e suportată de Arduino.Astfel se va putea reutilizara codul testat de întreaga comunitate Arduino, funcțiile de bază, de definire a pinilor, de schimbare a stării pinilor, de utilizare a bibliotecilor incluse.
+
+Prin folosirea exemplelor incluse în biblioteca radio s-a putut testa transmisia unui șir de caractere de o lungime variabilă, acest lucru demonstrând rezolvarea cu succes a temei propuse.
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.9]{pics/demoreceive.png}
+  \caption{Captură de ecran cu un mesaj primit folosind biblioteca radio}
+  \label{fig:demoreceive}
+\end{figure}
 
 \chapter{Concluzii și dezvoltări ulterioare}
+În concluzie, în domeniul IoT, plăcile de dezvoltare care au un modul radio integrat sunt preferate datorită faptului că scopul producătorului este minimizarea consumului prin maximizarea performanței. În zilele noastre domeniul IoT se extinde din ce în ce mai mult de la an la an. Orizonturile largi pe care le deschide acest domeniu atrage tot mai mulți producători, dezvoltatori de aplicații și comunități open-source care doresc să interconecteze tot ce ne înconjoară. Orașele inteligente, dispozitivele purtabile inteligente, spart grid și dispozitive medicale sunt doar câteva dintre lucrurile care pot influneța dramatic stilul de viață al oamenilor, în timp ce industria se bucură de simplificarea proceselor prin sisteme de gestionare inteligente, etichete de urmărire a produselor și nu numai. \\
+Tehnologia avansează pe zi ce trece oferindu-ne mijloace de a face lucrurile mai ușor și cu o performanță ridicată. Spre exempu, este mai convenabil să utilizezi un microcontroler care dispune de modul radio și alte periferice încorporate spre deosebire de un microcontroler care nu dispune de aceste module deoarece din punct de vedere al programului scris, modulele încorporate dispun de suport pentru folosirea acestora de la producător și vin performanța este superioară celorlalte.
+
+La biblioteca radio inclusă în pachetul pentru placa de dezvoltare Atmel SAMR21 Xplained Pro se mai poate adăuga suport pentru modul de operare extins care include funcționarea unui modul de securitate AES\footnote{AES = Advanced Encryption Standard} care are următoarele caracteristici:
+\begin{itemize}
+	\item criptare și decriptare accelerată hardware
+	\item compatibilitate cu standardul AES-128(blocuri și chei de 128 de biți)
+	\item suport pentru modurile ECB și CBC
+\end{itemize}
+Modulul de securitate este bazat pe un nucleu AES-128 în conformitate cu standardul FIPS197\cite{fips197} care funcționează independent ce celelalte blocuri componente ale modulului AT86RF233. Criptarea și decriptarea pot fi făcute în paralel cu transmisia sau recepția unui cadru. Controlul modulului de securitate este implementat prin accesul SRAM la spațiul de adrese 0x82-0x94.
+Prin utilizarea acestei componente se va putea securiza comunicația cu un algoritm de criptare simetric implementat hardware, AES. AES folosește o singură cheie privată cu care criptează și decriptează datele.\\
+Deasemenea, modulul AT86RF233 dispune și de un generator de numere aleatoare pe 2 biți care poate fi utilizat pentru a genera valori aleatoare pentru a genera chei algoritmului de AES.
+
+O altă proprietate pe care o poate implementa modulul radio este aceea de a opera cu rate mari de transmisie de date. Poate transmite cu o viteză de până a 2000kb/s în timp ce oferă suport pentru modul de operare extins. Selecția vitezei de transmisie nu impactează celelalte funcționalități. Se poate alege viteza de transmisie dintre 4 valori: 250kb/s, 500kb/s, 1000kb/s, 2000kb/s.
+
+Diversitatea alegerii antenei este o caracteristică importantă a modulului, acesta putând alege dintre cele două antene în funcție de puterea semnalului de pe fiecare. Daca s-a detectat un cadru valid pe una din antene, aceasta este aleasă pentru recepție, altfel căutarea continuă pe cealaltă antenă și invers. Acest lucru îmbunătățește conexiunea dintre nodurile rețelei, evitând cat de mult posibil pierderea acesteia.\\
+Alte dezvoltări ulterioare posibile sunt:
+\begin{itemize}
+ 	\item  \textit{Time Stamping} pentru pachetele primite, adică salvarea într-un câmp a momentului de timp la care a sosit acel cadru.
+	\item \textit{Time-Of-Flight Module} modul care permite măsurarea duratei transmisiei în timpul acesteia
+	\item \textit{Phase Difference} pentru măsurarea diferenței relative a fazei semnalului primit
+\end{itemize}
+În final, integrarea plăcii de dezvoltare Atmel SAMR21 Xplained Pro în mediul Arduino, oferă tuturor utilizatorilor care simpatizează acest ecosistem să aibă acces la această placă performantă, cu modul radio integrat și cu capabilități de extindere ale funcțiilor suportate.
 
 
 %BIBLIOGRAFIE
@@ -655,6 +737,28 @@ Microchip Developer Help.
 \textit{Mark Solters}.
 Simple Arduino driver for the AT86RF233 802.15.4 radio module, ported to C++ from RIOT-OS.
 \href{https://github.com/msolters/arduino-at86rf233}{https://github.com/msolters/arduino-at86rf233} accesat la data 10/06/2018.
+
+\bibitem{fips197}
+\textit{Federal Information Processing Standards Publication 197 }.
+ADVANCED ENCRYPTION STANDARD (AES).
+\href{https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf}{https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf} accesat la data 18/06/2018.
+
+\bibitem{comp1}
+Patrick Mannion.
+\textit{Comparing Low-Power Wireless Technologies (Part 1)}.
+Digi-Key's North American Editors.
+\href{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies}{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies} accesat la data 19/06/2018.
+
+\bibitem{comp2}
+Patrick Mannion
+\textit{Comparing Low Power Wireless Technologies (Part 2)}.
+Digi-Key's North American Editors
+\href{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies}{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies} accesat la data 19/06/2018.
+
+\bibitem{lowen}
+Sandeep Kamath, Joakim Lindh.
+\textit{Bluetooth Low Energy Power Consumption}.
+Digi-Key's North American Editors.
 
 \end{thebibliography}
 \end{document}
