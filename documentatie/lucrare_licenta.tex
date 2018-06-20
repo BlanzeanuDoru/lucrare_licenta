@@ -8,6 +8,7 @@
 \usepackage{graphicx} % support the \includegraphics command and options
 
 % formatting sections and subsections
+\usepackage[hyphens]{url}
 \usepackage{listings}
 \usepackage[section]{placeins}
 \usepackage[ separate-uncertainty = true, multi-part-units = repeat]{siunitx}
@@ -275,7 +276,9 @@ Industria sănătății va fi puternic influențată de IoT. Senzori inteligenț
 \includegraphics{pics/iot_health.png}
   \caption{Exemplu de sisteme ce ajută la îmbunătățirea stilului de viață}
   \label{fig:iot_health}
-\end{figure}
+\end{figure}\\
+\subsubsection{Spitale inteligente}
+În ceea ce privește spitalele, există multe cazuri în care se pot adopta sistem integrate interconectate. De la echipamente inteligente care folosesc algoritmi avansați de predicție a perioadelor de mentenanță la paturi inteligente. Spitalele prezintă un mediu din care se pot colecta o mulțime de date care pot ajuta la îmbunătățirea serviciilor, detecției diferitelor boli transmise pe căi aeriene și nu numai. Clădirea spitalului poate fi transformată într-o clădire inteligentă, automatizată care în caz de catastrofe poate răspunde la timp.
 
 \chapter{Descrierea problemei abordate și a metodei de rezolvare propuse}
 În cadrul lucrării se abordează problematica integrării unei noi plăci de dezvoltare în ecosistemul Arduino. \\
@@ -670,32 +673,32 @@ Alte dezvoltări ulterioare posibile sunt:
 \bibitem{theiot}
 Keyur K Patel, Sunil M Patel. 
 \textit{Internet of Things-IOT: Definition, Characteristics, Architecture, Enabling Technologies, Application \& Future Challenges}.
-ISSN 2321 3361, 2016 IJESC\\
-\href{http://ijesc.org/upload/8e9af2eca2e1119b895544fd60c3b857.Internet\%20of\%20Things-IOT\%20Definition,\%20Characteristics,\%20Architecture,\%20Enabling\%20Technologies,\%20Application\%20\&\%20Future\%20Challenges.pdf}{http://ijesc.org/upload/8e9af2eca2e1119b895544fd60c3b857.Internet\%20of\%20Things-IOT\%20Definition,\%20Characteristics,\%20Architecture,\%20Enabling\%20Technologies,\%20Application\%20\&\%20Future\%20Challenges.pdf} accesat la data 10/06/2018.
+ISSN 2321 3361, 2016 IJESC.
+\url{http://ijesc.org/upload/8e9af2eca2e1119b895544fd60c3b857.Internet\%20of\%20Things-IOT\%20Definition,\%20Characteristics,\%20Architecture,\%20Enabling\%20Technologies,\%20Application\%20\&\%20Future\%20Challenges.pdf}  accesat la data 10/06/2018.
 
 \bibitem{study}
 Padraig Scully.
 \textit{The Top 10 IoT Segments in 2018 – based on 1,600 real IoT projects}. 
-2018 ranking of Top IoT Segments\\
+2018 ranking of Top IoT Segments.
 \href{https://iot-analytics.com/top-10-iot-segments-2018-real-iot-projects/}{https://iot-analytics.com/top-10-iot-segments-2018-real-iot-projects/} accesat la data 10/06/2018.
 
 \bibitem{iotfields}
 Ran Liu, Jinfeng Wang.
 \textit{Internet of Things: Application and Prospect }
 MATEC Web of Conferences 100, 02034 (2017)\\
-\href{https://www.matec-conferences.org/articles/matecconf/pdf/2017/14/matecconf\_gcmm2017\_02034.pdf}{https://www.matec-conferences.org/articles/matecconf/pdf/2017/14/matecconf\_gcmm2017\_02034.pdf} accesat la data 10/06/2018.
+\url{https://www.matec-conferences.org/articles/matecconf/pdf/2017/14/matecconf\_gcmm2017\_02034.pdf} accesat la data 10/06/2018.
 
 
 \bibitem{lowpowerimportance}
 Sayfe Kiaei, Eby G. Friedman.
 \textit{Introduction to the Special Issue on Low Power Wireless Communications}.
 IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS—II: ANALOG AND DIGITAL SIGNAL PROCESSING, VOL. 44, NO. 6, JUNE 1997.\\
-\href{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=868450}{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=868450} accesat la data 10/06/2018.
+\url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=868450} accesat la data 10/06/2018.
 
 \bibitem{lowpowervsperformance}
 JeongGil Ko, Kevin Klues, Christian Richter, Wanja Hofer, Branislav Kusy, Michael Bruenig, Thomas Schmid, Qiang Wang, Prabal Dutta, and Andreas Terzis
 \textit{Low Power or High Performance? A Tradeoff Whose Time Has Come (and Nearly Gone)}\\
-\href{https://pdfs.semanticscholar.org/1f68/63c5c7c5e22a4507f1993f6c4c4a8b0b5594.pdf}{https://pdfs.semanticscholar.org/1f68/63c5c7c5e22a4507f1993f6c4c4a8b0b5594.pdf} accesat la data 10/06/2018.
+\url{https://pdfs.semanticscholar.org/1f68/63c5c7c5e22a4507f1993f6c4c4a8b0b5594.pdf} accesat la data 10/06/2018.
 
 \bibitem{samr21ug}
 \textit{Atmel-42243D-SAM-R21-Xplained-Pro\_User Guide-04/2016}
@@ -721,44 +724,42 @@ AT86RF233 datasheet.
 \bibitem{cpu}
 \textit{Cortex-M0+ Devices}.
 Generic User Guide.
-\href{http://infocenter.arm.com/help/topic/com.arm.doc.dui0662b/DUI0662B\_cortex\_m0p\_r0p1\_dgug.pdf}{http://infocenter.arm.com/help/topic/com.arm.doc.dui0662b/DUI0662B\_cortex\_m0p\_r0p1\_dgug.pdf}
+\url{http://infocenter.arm.com/help/topic/com.arm.doc.dui0662b/DUI0662B\_cortex\_m0p\_r0p1\_dgug.pdf} accesat la data 10/06/2018.
 
 \bibitem{memmap}
 \textit{Cortex M0+ memory map.}.
 Cortex-M0+ Devices Generic User Guide. 
-\href{http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0662b/CHDBIJJE.html}{http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0662b/CHDBIJJE.html} accesat la data 17/06/2018.
+\url{http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0662b/CHDBIJJE.html} accesat la data 17/06/2018.
 
 \bibitem{pipeline}
 \textit{ARM Cortex®-M0+ Pipeline.}.
 Microchip Developer Help.
-\href{http://microchipdeveloper.com/32arm:m0-pipeline}{http://microchipdeveloper.com/32arm:m0-pipeline} accesat la data 17/06/2018.
+\url{http://microchipdeveloper.com/32arm:m0-pipeline} accesat la data 17/06/2018.
 
 \bibitem{msolters}
 \textit{Mark Solters}.
 Simple Arduino driver for the AT86RF233 802.15.4 radio module, ported to C++ from RIOT-OS.
-\href{https://github.com/msolters/arduino-at86rf233}{https://github.com/msolters/arduino-at86rf233} accesat la data 10/06/2018.
+\url{https://github.com/msolters/arduino-at86rf233} accesat la data 10/06/2018.
 
 \bibitem{fips197}
 \textit{Federal Information Processing Standards Publication 197 }.
 ADVANCED ENCRYPTION STANDARD (AES).
-\href{https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf}{https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf} accesat la data 18/06/2018.
+\url{https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf} accesat la data 18/06/2018.
 
 \bibitem{comp1}
 Patrick Mannion.
 \textit{Comparing Low-Power Wireless Technologies (Part 1)}.
 Digi-Key's North American Editors.
-\href{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies}{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies} accesat la data 19/06/2018.
+\url{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies} accesat la data 19/06/2018.
 
 \bibitem{comp2}
 Patrick Mannion
 \textit{Comparing Low Power Wireless Technologies (Part 2)}.
 Digi-Key's North American Editors
-\href{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies}{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies} accesat la data 19/06/2018.
+\url{https://www.digikey.com/en/articles/techzone/2017/oct/comparing-low-power-wireless-technologies} accesat la data 19/06/2018.
 
 \bibitem{lowen}
 Sandeep Kamath, Joakim Lindh.
-\textit{Bluetooth Low Energy Power Consumption}.
-Digi-Key's North American Editors.
-
+\textit{Bluetooth Low Energy Power Consumption, Digi-key}.
 \end{thebibliography}
 \end{document}
