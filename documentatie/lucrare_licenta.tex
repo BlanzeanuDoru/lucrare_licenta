@@ -110,8 +110,8 @@ Departamentul Automatică și Informatică Industrială\\}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\ProjectTitleRO}{Integrarea unei plăci de dezvoltare bazate pe microcontrolerul ATSAMR21 cu mediul de dezvoltare Arduino IDE}
-\newcommand{\Name}{Blânzeanu Doru-Florin}
-\newcommand{\Advisor}{SI. dr. ing. Radu Pietraru}
+\newcommand{\Name}{Doru-Florin Blânzeanu}
+\newcommand{\Advisor}{Șl. dr. ing. Radu Pietraru}
 \newcommand{\Year}{2018}
 
 
@@ -189,19 +189,19 @@ Ne apropiem cu pași repezi de acel ideal, însă suntem deocamdată departe deo
 
 Potrivit unui studiu efectuat în anul 2018 cu privire la clasificarea domeniilor în care activează proiecte din domeniul internetului lucrurilor spune că majoritatea proiectelor sunt în sectorul de orașe inteligente, industrie și clădiri inteligente\cite{study}. Pe continentul american se află majoritatea acestor proiecte, urmat de Europa și Asia. Există diferențe mari între regiuni și domeniile de activitate ale proiectelor, astfel majoritatea proiectelor pentru orașe inteligente se află pe teritoriul european în timp ce pe continentul american predomină proiecte de mașini inteligente și sănătate. Asia este puternic dezvoltată în domeniul agriculturii inteligente.
 
-Dorința de a funcționa un timp îndelungat fără să necesite intervenția omului, a fost scopul principal în designul de rețele de senzori wireless în ultimii 10 ani\cite{lowpowervsperformance}. Prin concentrarea asupra acestei cerințe, designerii au căutat acele componente hardware care aveau cel mai mic consum de curent electric în mod activ și în sleep mode\footnote{sleep mode = mod de consum redus}. Aceste dispozitive consumă energie de ordin mW putere în mod activ, iar în modul de consum redus uW, renunțând la putere de calcul și memorie în favoarea consumului redus.
+Dorința de a funcționa un timp îndelungat fără să necesite intervenția omului, a fost scopul principal în designul de rețele de senzori wireless în ultimii 10 ani\cite{lowpowervsperformance}. Prin concentrarea asupra acestei cerințe, designerii au căutat acele componente hardware care aveau cel mai mic consum de curent electric în mod activ și în sleep mode\footnote{sleep mode = mod de consum redus}. Aceste dispozitive consumă energie de ordin mW putere în mod activ, iar în modul de consum redus $\mu$W, renunțând la putere de calcul și memorie în favoarea consumului redus.
 În schimb, puterea de calcul limitată și resursele de memorie mici ale acestor platforme restricționează aplicațiile pe care le pot implementa. Aplicațiile tipice urmăresc un model care preia date de la senzori, îi stochează, îi trimite și apoi intră din nou în modul de consum redus, în care senzorii de pe placă sunt interogați și datele returnate sunt trimise către un server. Aplicațiile ce necesită putere de calcul mare nu sunt suportate de aceste platforme. \\
 Aplicațiile care necesită putere de calcul mare sau procesare de semnal, în general trebuie să facă un compromis pentru a evita limitările impuse de platformă. Aceste aplicații tind să fie caracterizate de intervale alternante de activitate intensă urmată de perioade de inactivitate. Alternativa este să se utilizeze platforme care sacrifică consumul în favoarea puterii de procesare, sau platforme care combină microcontrolere low-power\footnote{low-power = consum redus} cu procesoare de înaltă performanță care consumă mult.
 
 \section{Protocoale radio}
-Domeniul IoT se bazează în cea mai mare parte pe transmisie și colectare de date. De cele mai multe ori este nevoie de de tehnologii care să ajute șa transmisia datelor la distanță, fără fir.
+Domeniul IoT se bazează în cea mai mare parte pe transmisie și colectare de date. De cele mai multe ori este nevoie de de tehnologii care să ajute la transmisia datelor la distanță, fără fir.
 Când vine vorba despre tehnologii wireless\footnote{wireless = fără fir}, inginerii au la dispoziție o gamă largă, inclusiv tehnologii bazate pe RF\footnote{RF = Radio Frequency} cum ar fi: Bluetooth Low Energy(BLE), NFC, ANT, RF4CE, Nike+, ZigBee și Wi-Fi, la care se adaugă și opțiunile bazate pe infraroșu de la IrDA\footnote{IrDA = Infrared Data Association}\cite{comp1}. Această gamă largă de opțiuni face ca alegerea să fie mai dificilă. Fiecare tehnologie face compromisuri între consum, lărgime de bandă și distanță de transmisie.
 
-Bluetooth Low Energy(BLE) a pornit ca un mic proiect în compania Nokia sub numele de Wibree. Bluetoot Special Interest Group a adoptat această tehnologie și odată cu versiunea 4.0 a fost numită tehnologie cu consum ultra redus. BLE operează în banda de 2.4GHz și este potrivită pentru transmisia de date de la senzori wireless sau alte periferice care permit în special comunicație asincronă. Introducerea verisunii 5 a tehnologiei Bluetooth a ridicat rata de transfer a chipurilor de la 1 la 2 Mbit/s și a crescut distanța de transmisie de până la patru ori în comparație cu versiunile anterioare. De menționat este că aceste îmbunătățiri nu se pot obține simulta, ci printr-un compromis intre cele două.
+Bluetooth Low Energy(BLE) a pornit ca un mic proiect în compania Nokia sub numele de Wibree. Bluetooth Special Interest Group a adoptat această tehnologie și odată cu versiunea 4.0 a fost numită tehnologie cu consum ultra redus. BLE operează în banda de 2.4GHz și este potrivită pentru transmisia de date de la senzori wireless sau alte periferice care permit în special comunicație asincronă. Introducerea verisunii 5 a tehnologiei Bluetooth a ridicat rata de transfer a chipurilor de la 1 la 2 Mbit/s și a crescut distanța de transmisie de până la patru ori în comparație cu versiunile anterioare. De menționat este că aceste îmbunătățiri nu se pot obține simultan, ci printr-un compromis intre cele două.
 
 În ceea ce privește tehnologia ANT, aceasta este comparabilă cu BLE din punct de vedere al consumului și al domeniului de operare, banda 2.4GHz ISM. Aplicațiile țintă ale acestui protocol sunt acelea cu consum redus, la care durata de viață a bateriei este de luni sau ani de zile. Original piața țintă viza segmentul de fitness și sport, dar în ultimul timp a fost folosit în aplicații IoT pentru case inteligente sau în industrie.
 
-Zigbee este un set de specificații wireless cu consum redus bazat pe IEEE802.15.4. Peste acesta rulează un protocol controlat de Zigbee Alliance, fiind destinat aplicațiilor de rețea industrială sau pentru case inteligente. Acesta operează în banda 2.4GHz ISM dar și în 784MHz în China, 868MHz în Europa și 912MHz în SUA sau Australia. Viteza de transmisie variază de la 20Kb/s la 250kb/s. Zigbee folosețte 16 canale de 2MHz separate de câte 5MHz, astfel spectrul este utilizat ineficient din cauza alocării nefolosite.
+Zigbee este un set de specificații wireless cu consum redus bazat pe IEEE802.15.4. Peste acesta rulează un protocol controlat de Zigbee Alliance, fiind destinat aplicațiilor de rețea industrială sau pentru case inteligente. Acesta operează în banda 2.4GHz ISM dar și în 784MHz în China, 868MHz în Europa și 912MHz în SUA sau Australia. Viteza de transmisie variază de la 20Kb/s la 250kb/s. Zigbee folosește 16 canale de 2MHz separate de câte 5MHz, astfel spectrul este utilizat ineficient din cauza alocării nefolosite.
 
 Wi-Fi este bazat pe IEEE 802.11 și este o tehnologie foarte eficientă, însă este mai mult optimizată pentru transferuri de date de dimensiuni mari decât pentru consum redus. De aceea Wi-Fi nu este destinat aplicațiilor de consum redus. Îmbunătățiri în direcția optimizării consumului au fost aduse prin standardele IEEE 802.11v și IEEE 802.11ah.
 
@@ -387,7 +387,7 @@ Placa de dezvoltare va detecta automat ce surse de alimentare sunt disponibile �
 
 \subsection{Periferice}
 \subsubsection{Butoane mecanice}
-Placa de dezvoltare conține doua butoane mecanice. Un buton este butonul de reset care este conectat ma linia de reset a microcontrolerului, iar celălalt buton este un buton de uz general care poate fi configurat. Când unul dintre butoane este apăsat, va lega linia la GND\footnote{GND = ground (masă)}.
+Placa de dezvoltare conține doua butoane mecanice. Un buton este butonul de reset care este conectat la linia de reset a microcontrolerului, iar celălalt buton este un buton de uz general care poate fi configurat. Când unul dintre butoane este apăsat, va lega linia la GND\footnote{GND = ground (masă)}.
 
 \subsubsection{LED}
 Există un LED, numit LED0, disponibil pe placa de dezvoltare Atmel SAM R21 Xplained Pro care poate fi activat sau dezactivat. Pentru a activa ledul, este necesar să legăm linia la GND.
@@ -418,7 +418,7 @@ Punctul de intrare în proiect este fișierul \textit{main.c} în funcția \text
 Procesul de build\footnote{build = construire} al proiecului constă în compilarea tuturor fișierelor sursă, cu fișierele header corespunzătoare, din toate cele 4 părți ale proiectului și asamblarea lor într-un singur fișier rezultat cu extensia \textit{.hex}, stocat la o locație temporară. Fișierul rezultat este mai apoi urcat în memoria microcontrolerului țintă și executat.
 
 \subsection{Dezvoltare proiect}
-Pentru a implementa tema propusă, se vor creea 3 din cele 4 părți componente ale unui proietct în Arduino IDE. În final, cele 3 părți formează pachetul care va fi arhivat și stocat online, iar oricine va dori să utilizeze o placă de dezvoltare de acest tip, va putea folosi acest pachet. La baza acestui pachet se află câteva fișiere de configurare a programatoarelor folosite de această placă de dezvoltare, de configurare a plăcii de dezvoltare și de configurare a procesului de build.
+Pentru a implementa tema propusă, se vor creea 3 din cele 4 părți componente ale unui proiect în Arduino IDE. În final, cele 3 părți formează pachetul care va fi arhivat și stocat online, iar oricine va dori să utilizeze o placă de dezvoltare de acest tip, va putea folosi acest pachet. La baza acestui pachet se află câteva fișiere de configurare a programatoarelor folosite de această placă de dezvoltare, de configurare a plăcii de dezvoltare și de configurare a procesului de build.
 
 Fișierul \textit{boards.txt} conține informații esențiale cu privire la placa de dezvoltare cum ar fi:
 \begin{itemize}
@@ -448,8 +448,8 @@ După o examinare amănunțită a documentației microcontrolerului SAM D21G în
 	\item{pentru SAM R21G nu avem modul DAC\footnote{DAC = Digital to Analog Converter}}
 	\item{pentru SAM R21G nu avem modul I2S\footnote{I2S = Inter-IC Sound Interface}}
 \end{itemize}
-Pentru a ne putea folosi de codul deja scris pentru plăcile de dezvoltare bazate pe SAM D21, este necesară modificarea acestuia în conformitate cu documentația oferită de producător pentru SAM R21G. Configurarea corectă a acestuia implică modificarea numărului de module TC și eliminarea inițializării modulului DAC, pe care microcontrolerele SAM D21 le au.
-Fiecare întrerupere are asociată o rutină care se execută când este declanșată acea întrerupere. Aceste rutine sunt setate în în mod implicit în codul de Arduino să apeleze funcție numită \textit{Dummy\_Handler} care va bloca programul în cazul unei întreruperi nedorite de utilizator. La setarea unei întreruperi prin apelul la functia \textit{attachInterrupt}, se modifică vectorul de întreruperi, variabila \textit{exception\_table}(Figura ~\ref{fig:interrupts}), în care sunt stocate adresele rutinelor de întrerupere pentru fiecare dintre întreruperi. 
+Pentru a ne putea folosi de codul deja scris pentru plăcile de dezvoltare bazate pe SAM D21, este necesară modificarea acestuia în conformitate cu documentația oferită de producător pentru SAM R21G. Configurarea corectă a acestuia implică modificarea numărului de module TC și eliminarea inițializării modulului DAC, pe care microcontrolerele SAM D21 îl au.
+Fiecare întrerupere are asociată o rutină care se execută când este declanșată acea întrerupere. Aceste rutine sunt setate în mod implicit în codul de Arduino să apeleze o funcție numită \textit{Dummy\_Handler} care va bloca programul în cazul unei întreruperi nedorite de utilizator. La setarea unei întreruperi prin apelul la functia \textit{attachInterrupt}, se modifică vectorul de întreruperi, variabila \textit{exception\_table}(Figura ~\ref{fig:interrupts}), în care sunt stocate adresele rutinelor de întrerupere pentru fiecare dintre întreruperi. 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{pics/interrupt_vector.png}
@@ -573,7 +573,7 @@ Spre deosebire de modul de acces \textit{Frame buffer}, modul de acces SRAM, est
 \item tx\_load
 \item tx\_exec
 \end{itemize}
-În cadrul funcției \textit{tx\_prepare} se verifică starea modulului,  dacă este ocupat se așteaptă eliberarea acestuia, iar dacă primește un cadru se anulează transmisia. Se contunuă cu setarea stării de așteptare transmitere.
+În cadrul funcției \textit{tx\_prepare} se verifică starea modulului,  dacă este ocupat se așteaptă eliberarea acestuia, iar dacă primește un cadru se anulează transmisia. Se continuă cu setarea stării de așteptare transmitere.
 Funcția de \textit{tx\_load} are ca parametri șirul de octeți care vor fi transmiși, lungimea șirului și indicele de unde va începe scrierea. Datorită faptului că valoarea câmpului PHR este de un octet, indicele de unde va începe scrierea va fi egal cu 1. Pentru a scrie în memoria SRAM se apelează funcția de transfer din clasa SPI care va pune în registrul de date octetul care se dorește a fi transmis spre modulul radio. Astfel, datele transmise sunt, comanda care selectează modul de acces, indicele de la care se începe scrierea și un număr de octeți egal cu lungimea șirului transmis.
 Pentru a porni transmisia, în metoda \textit{tx\_exec}, se scrie dimensiunea cadrului IEEE 802.15.4 care va urma a fi transmis, aceasta va fi egală cu dimensiunea șirului de octeți la care se mai adaugă un octet pentru dimensiunea cadrului, și se va scrie în registrul de stare, comanda de pornire a transmisiei. Toată această procedură poate fi observată în Figura~\ref{fig:send}.
 \begin{minipage}[c]{\textwidth}
@@ -620,10 +620,10 @@ Un exemplu de fișier de configurare se poate vedea în figura ~\ref{fig:json}.
   \label{fig:json}
 \end{figure}
 
-După definirea corectă a fișierului de tip json, acesta este urcat pe platforma github pentru a avea acces la el folosind un url\footnote{URL = Uniform Resource Locator}. Deasemenea, pachetul care con'ine codul sursă pentru toate cele 3 părți componente ale proiectului, este arhivat și urcat tot pe platforma github, iar url-ul care duce la acesta este pus în acest json de configurare.
+După definirea corectă a fișierului de tip json, acesta este urcat pe platforma github pentru a avea acces la el folosind un url\footnote{URL = Uniform Resource Locator}. Deasemenea, pachetul care conține codul sursă pentru toate cele 3 părți componente ale proiectului, este arhivat și urcat tot pe platforma github, iar url-ul care duce la acesta este pus în acest json de configurare.
 
 \section{Rezultate obținute}
-Pentru a putea instala pachetul rezultat, este nevoie de url-ul care indică locația fișierului json. În Arduino IDE în meniul \textit{File} la opțiunea \textit{Preferances} în câmpul \textit{Additional Boards Manager URLs} trebuie adăugat și url-ul obținut. După urmarea acestor pași, în meniul \textit{Tools}, submeniul \textit{Board}, elementul \textit{Boards Manager} va apărea opțiunea de a instala placa de dezvoltare Atmel SAMR21 Xplained Pro(Figura~\ref{fig:boardmanager}).
+Pentru a putea instala pachetul rezultat, este nevoie de url-ul care indică locația fișierului json. În Arduino IDE în meniul \textit{File} la opțiunea \textit{Preferances} în câmpul \textit{Additional Boards Manager URLs} trebuie adăugat și url-ul obținut. După urmarea acestor pași, în meniul \textit{Tools}, submeniul \textit{Board}, elementul \textit{Boards Manager} va apărea opțiunea de a instala placa de dezvoltare Atmel SAMR21 Xplained Pro(Figura~\ref{fig:boardsmanager}).
 \begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.8]{pics/boardsmanager.png}
@@ -644,7 +644,7 @@ Prin folosirea exemplelor incluse în biblioteca radio s-a putut testa transmisi
 
 \chapter{Concluzii și dezvoltări ulterioare}
 În concluzie, în domeniul IoT, plăcile de dezvoltare care au un modul radio integrat sunt preferate datorită faptului că scopul producătorului este minimizarea consumului prin maximizarea performanței. În zilele noastre domeniul IoT se extinde din ce în ce mai mult de la an la an. Orizonturile largi pe care le deschide acest domeniu atrage tot mai mulți producători, dezvoltatori de aplicații și comunități open-source care doresc să interconecteze tot ce ne înconjoară. Orașele inteligente, dispozitivele purtabile inteligente, spart grid și dispozitive medicale sunt doar câteva dintre lucrurile care pot influneța dramatic stilul de viață al oamenilor, în timp ce industria se bucură de simplificarea proceselor prin sisteme de gestionare inteligente, etichete de urmărire a produselor și nu numai. \\
-Tehnologia avansează pe zi ce trece oferindu-ne mijloace de a face lucrurile mai ușor și cu o performanță ridicată. Spre exempu, este mai convenabil să utilizezi un microcontroler care dispune de modul radio și alte periferice încorporate spre deosebire de un microcontroler care nu dispune de aceste module deoarece din punct de vedere al programului scris, modulele încorporate dispun de suport pentru folosirea acestora de la producător și vin performanța este superioară celorlalte.
+Tehnologia avansează pe zi ce trece oferindu-ne mijloace de a face lucrurile mai ușor și cu o performanță ridicată. Spre exempu, este mai convenabil să utilizezi un microcontroler care dispune de modul radio și alte periferice încorporate spre deosebire de un microcontroler care nu dispune de aceste module deoarece din punct de vedere al programului scris, modulele încorporate dispun de suport pentru folosirea acestora de la producător și performanța este superioară celorlalte.
 
 La biblioteca radio inclusă în pachetul pentru placa de dezvoltare Atmel SAMR21 Xplained Pro se mai poate adăuga suport pentru modul de operare extins care include funcționarea unui modul de securitate AES\footnote{AES = Advanced Encryption Standard} care are următoarele caracteristici:
 \begin{itemize}
@@ -652,9 +652,9 @@ La biblioteca radio inclusă în pachetul pentru placa de dezvoltare Atmel SAMR2
 	\item compatibilitate cu standardul AES-128(blocuri și chei de 128 de biți)
 	\item suport pentru modurile ECB și CBC
 \end{itemize}
-Modulul de securitate este bazat pe un nucleu AES-128 în conformitate cu standardul FIPS197\cite{fips197} care funcționează independent ce celelalte blocuri componente ale modulului AT86RF233. Criptarea și decriptarea pot fi făcute în paralel cu transmisia sau recepția unui cadru. Controlul modulului de securitate este implementat prin accesul SRAM la spațiul de adrese 0x82-0x94.
+Modulul de securitate este bazat pe un nucleu AES-128 în conformitate cu standardul FIPS197\cite{fips197} care funcționează independent de celelalte blocuri componente ale modulului AT86RF233. Criptarea și decriptarea pot fi făcute în paralel cu transmisia sau recepția unui cadru. Controlul modulului de securitate este implementat prin accesul SRAM la spațiul de adrese 0x82-0x94.
 Prin utilizarea acestei componente se va putea securiza comunicația cu un algoritm de criptare simetric implementat hardware, AES. AES folosește o singură cheie privată cu care criptează și decriptează datele.\\
-Deasemenea, modulul AT86RF233 dispune și de un generator de numere aleatoare pe 2 biți care poate fi utilizat pentru a genera valori aleatoare pentru a genera chei algoritmului de AES.
+Deasemenea, modulul AT86RF233 dispune și de un generator de numere aleatoare pe 2 biți care poate fi utilizat pentru a genera valori aleatoare utilizate la cheile algoritmului de AES.
 
 O altă proprietate pe care o poate implementa modulul radio este aceea de a opera cu rate mari de transmisie de date. Poate transmite cu o viteză de până a 2000kb/s în timp ce oferă suport pentru modul de operare extins. Selecția vitezei de transmisie nu impactează celelalte funcționalități. Se poate alege viteza de transmisie dintre 4 valori: 250kb/s, 500kb/s, 1000kb/s, 2000kb/s.
 
